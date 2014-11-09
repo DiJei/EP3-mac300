@@ -50,7 +50,8 @@ int main (int argc, char** argv) {
        printf("\n"); 
    }
 
-
+   printf("\n");
+   produtoMatriz(A,B,3);
 
   return 0;
 }
@@ -86,5 +87,16 @@ float **pegaMatriz(FILE *arquivo, int n) {
 }
 
 void produtoMatriz(float **A,float **B, int n) {
-	
+   int x,y,j,w,total;
+   for (x = 0; x < n; x++) {
+    for (y = 0; y < n; y ++) {
+       total = 0;
+       
+         for (w = 0 ; w < n; w++) {
+          total += A[x][w] * B[w][y];
+         }    
+       printf("%d ",total);
+    }
+    printf("\n");
+   }
 }
